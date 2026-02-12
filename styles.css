@@ -1,0 +1,202 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+header {
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #9b59b6;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #9b59b6;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #9b59b6;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+    padding: 0 20px;
+    background: radial-gradient(circle at top, #1e0033, #000000);
+    animation: bgPulse 10s infinite alternate;
+}
+
+@keyframes bgPulse {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.hero h2 {
+    font-size: 3rem;
+    color: #9b59b6;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px #9b59b6;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #fff;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.hero .btn {
+    padding: 15px 40px;
+    background: linear-gradient(90deg, #9b59b6, #6a0dad);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.hero .btn:hover {
+    background: linear-gradient(90deg, #6a0dad, #9b59b6);
+    transform: scale(1.05);
+}
+
+/* Features */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px 20px;
+}
+
+.feature-card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #9b59b6;
+    border-radius: 20px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #9b59b6;
+}
+
+.feature-card h3 {
+    color: #9b59b6;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 2px solid #9b59b6;
+    margin-top: auto;
+}
+
+footer p {
+    color: #fff;
+}
+
+/* Glitch */
+.glitch {
+    position: relative;
+    color: #9b59b6;
+    font-size: 3rem;
+    text-transform: uppercase;
+    animation: glitchAnim 1s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+}
+
+.glitch::before {
+    animation: glitchTop 1s infinite;
+    clip: rect(0, 900px, 45%, 0);
+    color: #fff;
+}
+
+.glitch::after {
+    animation: glitchBottom 1s infinite;
+    clip: rect(55%, 900px, 100%, 0);
+    color: #ff00ff;
+}
+
+@keyframes glitchAnim {
+    0% { transform: translate(0);}
+    20% { transform: translate(-2px, 2px);}
+    40% { transform: translate(-2px, -2px);}
+    60% { transform: translate(2px, 2px);}
+    80% { transform: translate(2px, -2px);}
+    100% { transform: translate(0);}
+}
+
+@keyframes glitchTop {
+    0% { transform: translate(0);}
+    20% { transform: translate(-2px, -2px);}
+    40% { transform: translate(2px, 2px);}
+    60% { transform: translate(-2px, 2px);}
+    80% { transform: translate(2px, -2px);}
+    100% { transform: translate(0);}
+}
+
+@keyframes glitchBottom {
+    0% { transform: translate(0);}
+    20% { transform: translate(2px, 2px);}
+    40% { transform: translate(-2px, -2px);}
+    60% { transform: translate(2px, -2px);}
+    80% { transform: translate(-2px, 2px);}
+    100% { transform: translate(0);}
+}
